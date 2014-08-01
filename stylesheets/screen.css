@@ -1,0 +1,146 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../lib/gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url('/stylesheets/fonts/pacifico-fontfacekit.eot');
+  src: url('/stylesheets/fonts/pacifico-fontfacekit.eot?#iefix') format('embedded-opentype'), url('/stylesheets/fonts/pacifico-fontfacekit.woff') format('woff'), url('/stylesheets/fonts/pacifico-fontfacekit.otf') format('opentype');
+}
+
+/***** Mixins ******/
+/***** Mixins Over******/
+/* line 47, ../sass/screen.scss */
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+/******* Sass Begins *******/
+/* line 56, ../sass/screen.scss */
+.slide, .slide2, .slide3, .slide4, .slide5 {
+  border-bottom: 1px dashed #222222;
+}
+
+/* line 61, ../sass/screen.scss */
+.slide1 {
+  height: 100%;
+  width: 100%;
+  opacity: 0.95;
+  overflow: hidden;
+  z-index: -1000;
+  position: absolute;
+  background: black;
+}
+
+/* line 70, ../sass/screen.scss */
+.video {
+  z-index: -1000;
+  top: 0;
+  left: 0;
+  width: 1292px;
+  height: 727px;
+  position: absolute;
+  overflow-y: hidden;
+  opacity: 0.2;
+}
+
+/* line 82, ../sass/screen.scss */
+.slide2 {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 90, ../sass/screen.scss */
+.slide3 {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 97, ../sass/screen.scss */
+.slide4 {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 104, ../sass/screen.scss */
+.slide5 {
+  height: 100%;
+  width: 100%;
+}
+
+/**** Parent code Over ****/
+/* line 113, ../sass/screen.scss */
+.text {
+  color: #fafafa;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10rem;
+}

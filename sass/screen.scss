@@ -1,0 +1,121 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+@include font-face("Pacifico", font-files("pacifico-fontfacekit.woff", woff, "pacifico-fontfacekit.otf", opentype), "pacifico-fontfacekit.eot");  
+
+$black:#222;
+$lessblack:#333;
+$lesserblack:#444;
+$darkblue:#06A2CB;
+$blue:#52ADDA;
+$lessblue:#68B8DF;
+$grey:#C9C9C9;
+$lessgrey:#DBDBDB;
+$white:#fafafa;
+$dark: #282828;
+$pink: #fc2161;
+$pink-d: darken($pink, 15%);
+$green: #77BD42;
+$green-d: darken($green, 15%);
+$yellow: #ffb809;
+$lightyellow: #ffffe0;
+$orange: #df4a1f;
+
+/***** Mixins ******/
+
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media  only screen
+            and (max-width: 600px)  {@content;}
+  }
+  @else if $point == medium {
+    @media only screen
+            and (max-width: 820px) { @content; }
+  }
+  @else if $point == larger {
+    @media only screen
+            and (max-width: 1100px)  { @content; }
+  }
+}
+
+/***** Mixins Over******/
+
+.container {
+    width:100%;
+    height:100%;
+}
+
+
+
+/******* Sass Begins *******/
+
+.slide {
+    border-bottom:1px dashed $black;
+    @extend .slide;
+}
+
+.slide1 {
+    height: 100%;
+    width:100%;
+    opacity: 0.95;
+    overflow:hidden;
+    z-index: -1000;
+    position: absolute;
+    background: black;
+}    
+    .video {
+        z-index:-1000;
+        top: 0;
+        left: 0;
+        width:1292px;
+        height:727px;
+        position: absolute;
+        overflow-y:hidden;
+        opacity:0.2;
+    }
+
+
+.slide2 {
+    @extend .slide;
+    height: 100%;
+    width:100%;
+}
+
+
+
+.slide3 {
+    @extend .slide;
+    height: 100%;
+    width:100%;
+
+}
+
+.slide4 {
+    @extend .slide;
+    height: 100%;
+    width:100%;
+    
+}
+
+.slide5 {
+    @extend .slide;
+    height: 100%;
+    width:100%;
+    
+}
+
+/**** Parent code Over ****/
+
+.text {
+    color:$white;
+    text-align:center;
+    font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size:10rem;
+}
+
