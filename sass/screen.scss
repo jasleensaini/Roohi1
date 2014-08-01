@@ -66,17 +66,38 @@ $orange: #df4a1f;
     z-index: -1000;
     position: absolute;
     background: black;
-}    
-    .video {
-        z-index:-1000;
-        top: 0;
-        left: 0;
-        width:1292px;
-        height:727px;
-        position: absolute;
-        overflow-y:hidden;
-        opacity:0.2;
+  
+    @include breakpoint(small)
+    {
+    background: url("image/55.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size : 100% 100%;
     }
+    @include breakpoint(medium)
+    {
+    background: url("image/55.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size : 100% 100%;
+    }
+}
+    .video {
+    z-index:-1000;
+    top: 0;
+    left: 0;
+    width:1292px;
+    height:727px;
+    position: absolute;
+    overflow-y:hidden;
+    opacity:0.2;
+    @include breakpoint(medium){
+        display: none;
+    }
+        @include breakpoint(small){
+        display: none;
+    }
+}
 
 
 .slide2 {
@@ -114,8 +135,14 @@ $orange: #df4a1f;
     color:$white;
     text-align:center;
     font-family: 'Pacifico', cursive;
-  font-style: normal;
-  font-weight: 400;
-  font-size:10rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size:10rem;
+    @include breakpoint(medium){
+        font-size:8rem;
+    }
+        @include breakpoint(small){
+        font-size:4.5rem;
+    }
 }
 
