@@ -54,11 +54,12 @@ $orange: #df4a1f;
 /******* Sass Begins *******/
 
 .slide {
-    border-bottom:1px dashed $black;
-    @extend .slide;
+    border-bottom:1px dashed $white;
+  
 }
 
 .slide1 {
+    @extend .slide;
     height: 100%;
     width:100%;
     opacity: 0.95;
@@ -66,22 +67,8 @@ $orange: #df4a1f;
     z-index: -1000;
     position: absolute;
     background: black;
-  
-    @include breakpoint(small)
-    {
-    background: url("image/55.jpg") no-repeat;
-    height: 100%;
-    width: 100%;
-    background-size : 100% 100%;
-    }
-    @include breakpoint(medium)
-    {
-    background: url("image/55.jpg") no-repeat;
-    height: 100%;
-    width: 100%;
-    background-size : 100% 100%;
-    }
-}
+    @include breakpoint(small){background: url("image/55.jpg") no-repeat; height: 100%; width: 100%; background-size : 100% 100%;} @include breakpoint(medium){ background: url("image/55.jpg") no-repeat; height: 100%; width: 100%; background-size : 100% 100%;}
+
     .video {
     z-index:-1000;
     top: 0;
@@ -92,11 +79,20 @@ $orange: #df4a1f;
     position: absolute;
     overflow-y:hidden;
     opacity:0.45;
-    @include breakpoint(medium){
-        display: none;
+    @include breakpoint(medium){display: none;}
+    @include breakpoint(small){display: none;}
     }
-        @include breakpoint(small){
-        display: none;
+
+    .text {
+    color:$white;
+    text-align:center;
+    font-family: 'Calligraffitti';
+    font-style: normal;
+    font-weight: 600;
+    font-size:10rem;
+    margin-top:5rem;
+    @include breakpoint(medium){font-size:8rem;}
+    @include breakpoint(small){font-size:4.5rem;}
     }
 }
 
@@ -115,12 +111,19 @@ $orange: #df4a1f;
     height: 100%;
     width:100%;
     background: black;
+
+.wording {
+    font-family:'Calligraffitti';
+    color:$white;
+    font-size:2.5rem;
+    text-align:center;
+    padding-top:6rem;
+    }
 }
 .back-img{
     background: url("image/map.jpg") no-repeat;
     background-size: 100% 100%;
     opacity:0.8;
-
     }
   
 
@@ -129,162 +132,140 @@ $orange: #df4a1f;
     @extend .slide;
     height: 100%;
     width:100%;
+    background-color:black;
     
 }
+/**************************************Text Transition***************************/
+    .os-phrases h2 {
+        font-family: 'Dosis', 'Lato', sans-serif;
+        font-size: 70px;
+        font-weight: 200;
+        width: 100%;
+        overflow: hidden;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        letter-spacing: 14px;
+        text-align: center;
+    }
+
+    .os-phrases h2,
+    .os-phrases h2 > span {
+        height: 100%;
+        /* Centering with flexbox */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .os-phrases h2 > span {
+        margin: 0 15px;
+    }
+
+    .os-phrases h2 > span > span {
+        display: inline-block;
+        perspective: 1000px;
+        transform-origin: 50% 50%;
+    }
+
+    .os-phrases h2 > span > span > span {
+        display: inline-block;
+        color: hsla(0,0%,0%,0);
+        transform-style: preserve-3d;
+        transform: translate3d(0,0,0);
+        animation: OpeningSequence 5.2s linear forwards;
+    }
+
+    .os-phrases h2:nth-child(2) > span > span > span {
+        animation-delay: 5s;
+    }
+
+    .os-phrases h2:nth-child(3) > span > span > span {
+        animation-delay: 10s;
+    }
+
+    .os-phrases h2:nth-child(4) > span > span > span {
+        animation-delay: 15s;
+    }
+
+    .os-phrases h2:nth-child(5) > span > span > span {
+        font-size: 150px;
+        animation-delay: 21s;
+        animation-duration: 8s;
+    }
+
+    .os-phrases h2:nth-child(6) > span > span > span {
+        animation-delay: 30s;
+    }
+
+    .os-phrases h2:nth-child(7) > span > span > span {
+        animation-delay: 34s;
+    }
+
+
+
+    @keyframes OpeningSequence {
+        0% {
+            text-shadow: 0 0 50px #fff;
+            letter-spacing: 80px;
+            opacity: 0.2;
+            transform: rotateY(-90deg);
+        }
+        50% {
+            text-shadow: 0 0 1px #fff;
+            letter-spacing: 14px;
+            opacity: 0.8;
+            transform: rotateY(0deg);
+        }
+        85% {
+            text-shadow: 0 0 1px #fff;
+            opacity: 0.8;
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        100% {
+            text-shadow: 0 0 10px #fff;
+            opacity: 0;
+            transform: translateZ(130px);
+            pointer-events: none;
+        }
+    }
+
+    .os-phrases h2:nth-child(8) > span > span > span {
+        font-size: 30px;
+        animation: FadeIn 4s linear 40s forwards;
+    }
+
+
+    @keyframes FadeIn { 
+        0% {
+            opacity: 0;
+            text-shadow: 0 0 50px #fff;
+        }
+        100% {
+            opacity: 0.8;
+            text-shadow: 0 0 1px #fff;
+        }
+    }
+
+    /* Bold words */
+    .os-phrases h2:first-child .word3,
+    .os-phrases h2:nth-child(2) .word2,
+    .os-phrases h2:nth-child(4) .word2 {
+        font-weight: 600;
+    }
+
+/**************************************Text Transition****************************************/
+
 
 .slide5 {
     @extend .slide;
     height: 100%;
     width:100%;
-    
-}
-
-/**** Parent code Over ****/
-
-.text {
-    color:$white;
-    text-align:center;
-    font-family: 'Calligraffitti';
-    font-style: normal;
-    font-weight: 600;
-    font-size:10rem;
-    margin-top:5rem;
-    @include breakpoint(medium){
-        font-size:8rem;
-    }
-        @include breakpoint(small){
-        font-size:4.5rem;
-    }
-}
-.wording {
-    font-family:'Calligraffitti';
-    color:$white;
-    font-size:2.5rem;
-    text-align:center;
-    padding-top:6rem;
+    background: black;
 }
 
 
-.os-phrases h2 {
-    font-family: 'Dosis', 'Lato', sans-serif;
-    font-size: 70px;
-    font-weight: 200;
-    width: 100%;
-    overflow: hidden;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    letter-spacing: 14px;
-    text-align: center;
-}
-
-.os-phrases h2,
-.os-phrases h2 > span {
-    height: 100%;
-    /* Centering with flexbox */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.os-phrases h2 > span {
-    margin: 0 15px;
-}
-
-.os-phrases h2 > span > span {
-    display: inline-block;
-    perspective: 1000px;
-    transform-origin: 50% 50%;
-}
-
-.os-phrases h2 > span > span > span {
-    display: inline-block;
-    color: hsla(0,0%,0%,0);
-    transform-style: preserve-3d;
-    transform: translate3d(0,0,0);
-    animation: OpeningSequence 5.2s linear forwards;
-}
-
-.os-phrases h2:nth-child(2) > span > span > span {
-    animation-delay: 5s;
-}
-
-.os-phrases h2:nth-child(3) > span > span > span {
-    
-    animation-delay: 10s;
-}
-
-.os-phrases h2:nth-child(4) > span > span > span {
-
-    animation-delay: 15s;
-}
-
-.os-phrases h2:nth-child(5) > span > span > span {
-    font-size: 150px;
-    animation-delay: 21s;
-    animation-duration: 8s;
-}
-
-.os-phrases h2:nth-child(6) > span > span > span {
-    animation-delay: 30s;
-}
-
-.os-phrases h2:nth-child(7) > span > span > span {
-    animation-delay: 34s;
-}
-
-
-
-@keyframes OpeningSequence {
-    0% {
-        text-shadow: 0 0 50px #fff;
-        letter-spacing: 80px;
-        opacity: 0.2;
-        transform: rotateY(-90deg);
-    }
-    50% {
-        text-shadow: 0 0 1px #fff;
-        letter-spacing: 14px;
-        opacity: 0.8;
-        transform: rotateY(0deg);
-    }
-    85% {
-        text-shadow: 0 0 1px #fff;
-        opacity: 0.8;
-        transform: rotateY(0deg) translateZ(100px);
-    }
-    100% {
-        text-shadow: 0 0 10px #fff;
-        opacity: 0;
-        transform: translateZ(130px);
-        pointer-events: none;
-    }
-}
-
-.os-phrases h2:nth-child(8) > span > span > span {
-    font-size: 30px;
-    animation: FadeIn 4s linear 40s forwards;
-}
-
-
-@keyframes FadeIn { 
-    0% {
-        opacity: 0;
-        text-shadow: 0 0 50px #fff;
-    }
-    100% {
-        opacity: 0.8;
-        text-shadow: 0 0 1px #fff;
-    }
-}
-
-/* Bold words */
-.os-phrases h2:first-child .word3,
-.os-phrases h2:nth-child(2) .word2,
-.os-phrases h2:nth-child(4) .word2 {
-    font-weight: 600;
-}
