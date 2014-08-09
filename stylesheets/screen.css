@@ -428,18 +428,13 @@ li {
 /*************************************slider content over***********************************/
 /* line 349, ../sass/screen.scss */
 body {
-  background-color: #000000;
+  background: url("image/particle1.jpg");
 }
 
 /* line 353, ../sass/screen.scss */
-.scrollBg {
-  background-image: url("image/1.jpg");
-  background-color: #000000;
-  width: 100%;
+.image6 {
   height: 100%;
-}
-
-/* line 360, ../sass/screen.scss */
-.scrollBg img {
-  display: block;
+  width: 100%;
+  background: url(image/punched1.png) no-repeat transparent;
+  background-size: 100% 100%;
 }
