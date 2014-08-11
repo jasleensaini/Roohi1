@@ -62,37 +62,14 @@ $orange: #df4a1f;
     @extend .slide;
     height: 100%;
     width:100%;
-    opacity: 0.95;
-    overflow:hidden;
-    z-index: -1000;
-    position: absolute;
-    background: black;
-    @include breakpoint(small){background: url("image/55.jpg") no-repeat; height: 100%; width: 100%; background-size : 100% 100%;} @include breakpoint(medium){ background: url("image/55.jpg") no-repeat; height: 100%; width: 100%; background-size : 100% 100%;}
-
-    .video {
-    z-index:-1000;
-    top: 0;
-    left: 0;
-    width:100%;
-    height:100%;
-    background-size:100% 100%;
-    position: absolute;
-    overflow-y:hidden;
-    opacity:0.45;
-    @include breakpoint(medium){display: none;}
-    @include breakpoint(small){display: none;}
-    }
-
-    .text {
-    color:$white;
-    text-align:center;
-    font-family: 'Calligraffitti';
-    font-style: normal;
-    font-weight: 600;
-    font-size:10rem;
-    margin-top:5rem;
-    @include breakpoint(medium){font-size:8rem;}
-    @include breakpoint(small){font-size:4.5rem;}
+   
+     background: url("image/particle1.jpg");
+  
+    .image6 {
+        height: 100%;
+        width: 100%;
+        background: url(image/punched1.png) no-repeat transparent;
+        background-size: 100% 100%;
     }
 }
 
@@ -101,7 +78,43 @@ $orange: #df4a1f;
     @extend .slide;
     height: 100%;
     width:100%;
+    background: url("image/paint1.jpg") repeat;
+    background-size:210%;
+    
 
+     .wording {
+    font-family:'Calligraffitti';
+    color:$white;
+    font-size:2rem;
+    text-align:center;
+    padding-top:0rem;
+    }
+
+    .triangle-up { 
+    margin-left:6rem;
+    border-bottom: 150px solid black;
+     border-left: 550px solid transparent; 
+     border-right: 550px solid transparent; 
+     height: 0;
+      width: 100px;
+      opacity:0.5;
+     }
+     .triangle-down { 
+     width: 0;
+      height: 0; 
+      border-left: 550px solid transparent;
+       border-right: 550px solid transparent; 
+       border-top: 150px solid black; 
+       margin-left:6rem;
+        opacity:0.5;
+       } 
+    .rectangle { 
+    width: 1100px; 
+    height: 373px;
+    background: black; 
+     margin-left:6rem;
+     opacity:0.5;
+     } 
 }
 
 
@@ -110,21 +123,181 @@ $orange: #df4a1f;
     @extend .slide;
     height: 100%;
     width:100%;
-    background: black;
-
-.wording {
-    font-family:'Calligraffitti';
-    color:$white;
-    font-size:2.5rem;
-    text-align:center;
-    padding-top:6rem;
-    }
-}
-.back-img{
-    background: url("image/map.jpg") no-repeat;
+    background: url("image/particle.jpg") no-repeat;
     background-size: 100% 100%;
-    opacity:0.8;
+
+     .circle-item {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    cursor: default;
+    background: $yellow;
+    box-shadow: inset 0 0 30px 10px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.1);
+    @include transition (all 0.4s ease-in-out);
+ 
     }
+
+    
+    .circle-info {
+    position: absolute;
+    background: rgba(63,147,147, 0.8);
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    opacity: 0;
+    @include transition (all 0.4s ease-in-out);
+    -webkit-transform: scale();
+    -moz-transform: scale();
+    -ms-transform: scale();
+    -o-transform: scale();
+    transform: scale();
+    -webkit-backface-visibility: hidden;
+    }
+
+    .circle-info h1 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0 30px;
+    padding: 45px 0 0 0;
+    height: 140px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .circle-info h2 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin: 0 30px;
+    padding: 45px 0 0 0;
+    height: 140px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .circle-info p {
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    opacity: 0;
+    @include transition (all 1s ease-in-out 0.4s);
+    }
+
+    .circle-info p a {
+    display: block;
+    color: #fff;
+    color: rgba(255,255,255,0.7);
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding-top: 4px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    .circle-info p a:hover {
+    color: #fff222;
+    color: rgba(255,242,34, 0.8);
+    }
+
+    .circle-item:hover { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.1) }
+
+    .circle-item:hover .circle-info {
+    opacity: 1;
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    }
+
+    .circle-item:hover .circle-info p { opacity: 1 }
+
+    .circle-grid {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    list-style: none;
+    display: block;
+    text-align: center;
+    width: auto;
+    float:left;
+    white-space: nowrap;
+    }
+
+    .circle-grid li {
+    width: 220px;
+    height: 220px;
+    display: inline-block;
+    margin: 45px;
+    margin-top:200px;
+    float :left;
+    }
+    
+    .circle-grid-text {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    color:white;
+    font-size:25px;
+    float:left;
+     white-space: nowrap;
+    }
+
+    .circle-grid-text li {
+    width: 220px;
+    height: 220px;
+    display: inline-block;
+    margin: 0px 45px 40px;
+    float:left;
+    }
+
+    .circle-grid:after,
+    .circle-item:before {
+    content: '';
+    display: table;
+    }
+
+    .circle-grid:after { clear: both }
+
+
+    .circle-img1 {
+    background-image: url(image/rahat.jpg);
+    background-size: 240px 240px;
+    }
+    .circle-img2 {
+    background-image: url(image/abida.jpg);
+    background-size: 240px 260px;
+    }
+
+    .circle-img3 {
+    background-image: url(image/rehman.jpg);
+    background-size: 240px 240px;
+    }
+
+    .circle-img4 {
+    background-image: url(image/kavita.jpg);
+    background-size: 240px 260px;
+    }
+
+    * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }    
+
+}
+
   
 
 
@@ -133,139 +306,29 @@ $orange: #df4a1f;
     height: 100%;
     width:100%;
     background-color:black;
+
     
 }
-/**************************************Text Transition***************************/
-    .os-phrases h2 {
-        font-family: 'Dosis', 'Lato', sans-serif;
-        font-size: 70px;
-        font-weight: 200;
-        width: 100%;
-        overflow: hidden;
-        text-transform: uppercase;
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        letter-spacing: 14px;
-        text-align: center;
-    }
-
-    .os-phrases h2,
-    .os-phrases h2 > span {
-        height: 100%;
-        /* Centering with flexbox */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .os-phrases h2 > span {
-        margin: 0 15px;
-    }
-
-    .os-phrases h2 > span > span {
-        display: inline-block;
-        perspective: 1000px;
-        transform-origin: 50% 50%;
-    }
-
-    .os-phrases h2 > span > span > span {
-        display: inline-block;
-        color: hsla(0,0%,0%,0);
-        transform-style: preserve-3d;
-        transform: translate3d(0,0,0);
-        animation: OpeningSequence 5.2s linear forwards;
-    }
-
-    .os-phrases h2:nth-child(2) > span > span > span {
-        animation-delay: 5s;
-    }
-
-    .os-phrases h2:nth-child(3) > span > span > span {
-        animation-delay: 10s;
-    }
-
-    .os-phrases h2:nth-child(4) > span > span > span {
-        animation-delay: 15s;
-    }
-
-    .os-phrases h2:nth-child(5) > span > span > span {
-        font-size: 150px;
-        animation-delay: 21s;
-        animation-duration: 8s;
-    }
-
-    .os-phrases h2:nth-child(6) > span > span > span {
-        animation-delay: 30s;
-    }
-
-    .os-phrases h2:nth-child(7) > span > span > span {
-        animation-delay: 34s;
-    }
-
-
-
-    @keyframes OpeningSequence {
-        0% {
-            text-shadow: 0 0 50px #fff;
-            letter-spacing: 80px;
-            opacity: 0.2;
-            transform: rotateY(-90deg);
-        }
-        50% {
-            text-shadow: 0 0 1px #fff;
-            letter-spacing: 14px;
-            opacity: 0.8;
-            transform: rotateY(0deg);
-        }
-        85% {
-            text-shadow: 0 0 1px #fff;
-            opacity: 0.8;
-            transform: rotateY(0deg) translateZ(100px);
-        }
-        100% {
-            text-shadow: 0 0 10px #fff;
-            opacity: 0;
-            transform: translateZ(130px);
-            pointer-events: none;
-        }
-    }
-
-    .os-phrases h2:nth-child(8) > span > span > span {
-        font-size: 30px;
-        animation: FadeIn 4s linear 40s forwards;
-    }
-
-
-    @keyframes FadeIn { 
-        0% {
-            opacity: 0;
-            text-shadow: 0 0 50px #fff;
-        }
-        100% {
-            opacity: 0.8;
-            text-shadow: 0 0 1px #fff;
-        }
-    }
-
-    /* Bold words */
-    .os-phrases h2:first-child .word3,
-    .os-phrases h2:nth-child(2) .word2,
-    .os-phrases h2:nth-child(4) .word2 {
-        font-weight: 600;
-    }
-
-/**************************************Text Transition over****************************************/
-
 
 .slide5 {
     @extend .slide;
     height: 100%;
     width:100%;
     background: black;
+
+    .o {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    padding: 5%;
+}
+.o:before {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transform: rotate(45deg);
+    background: linear-gradient(dodgerblue, black);
+    content: '';
+}
 }
 
 
@@ -344,16 +407,33 @@ li {
 
 /*************************************slider content over***********************************/
 
-
-
-body {
-    background: url("image/particle1.jpg");
-}
-
-.image6 {
-        height: 100%;
-        width: 100%;
-        background: url(image/punched1.png) no-repeat transparent;
-        background-size: 100% 100%;
-         
+ .hexagon {
+    width: 100px; 
+    height: 55px; 
+    background: red;
+    position: relative;
+    z-index:1000;
+     }
+    .hexagon:before { 
+    content: ""; 
+    position: absolute; 
+    top: -25px; 
+    left: 0; 
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent; 
+    border-right: 50px solid transparent; 
+    border-bottom: 25px solid red; 
     }
+
+    .hexagon:after { 
+    content: ""; 
+    position: absolute; 
+    bottom: -25px;
+     left: 0; 
+    width: 0;
+     height: 0; 
+     border-left: 50px solid transparent; 
+     border-right: 50px solid transparent; 
+     border-top: 25px solid red; 
+     }
