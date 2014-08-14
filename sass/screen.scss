@@ -47,10 +47,32 @@ $orange: #df4a1f;
 .container {
     width:100%;
     height:100%;
+    background-color:black;
 }
-.main{
-    margin-top:30px;
-    margin-left:-50px;
+    .navigation{
+    padding:0;
+    background-color:transparent;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    
+    
+    li{
+    display:inline-block;
+    padding: 5px 10px;
+        a{
+        color: #e1e1e1;
+        text-decoration:none;
+
+            &:hover{
+            color: lighten(#e1e1e1, 20%);
+            }
+        }
+
+    }
+    .active{
+    background-color: lighten(#333, 20%);
+    }
 }
 
 
@@ -62,31 +84,34 @@ $orange: #df4a1f;
     background-attachment:fixed;
     position:relative;
     height: 100%;
-    width:100%;
-   
-  
+    width:100%;  
+    background-color:black;
 }
 
 #slide1 {
-    
+    height:100%;
+    width:100%;
      background: url("image/particle1.jpg");
-  
+     background-size:100% 100%;
+}  
     .image6 {
         height: 100%;
         width: 100%;
         background: url(image/punched1.png) no-repeat transparent;
         background-size: 100% 100%;
     }
-}
+
 
 
 #slide2 {
     background: url("image/paint1.jpg") repeat;
     background-size:210%;
+    background-size:cover;
+    z-index:9;
     @include breakpoint(small) {background-size:100% 100%; background-repeat: repeat;}
     @include breakpoint(medium) {background-size:100% 100%; background-repeat: repeat;}
     
-
+}
      .wording {
     font-family:'Calligraffitti';
     color:$white;
@@ -99,6 +124,7 @@ $orange: #df4a1f;
     @include breakpoint(medium) {font-size:1.5rem; font-weight:400; padding-top:-2rem;}
     
     }
+    
 
     .triangle-up { 
     margin-left:6rem;
@@ -135,14 +161,15 @@ $orange: #df4a1f;
     @include breakpoint(small) { width: 500px; height: 300px;}
     @include breakpoint(medium) { width: 500px; height: 300px;}
     } 
-}
+
 
 
 
 #slide3 {
     background: url("image/particle.jpg") no-repeat;
     background-size: 100% 100%;
-
+    background-size:cover;
+}
      .rectangle1 { 
     width: 100%; 
     height: 100%;
@@ -320,21 +347,22 @@ $orange: #df4a1f;
             box-sizing: border-box;
     }    
 
-}
+
 
   
 
 
 #slide4 {
-
+    height:100%;
+    width:100%;
      background: url("image/particle.jpg") no-repeat;
-
-    
+     background-size:100% 100%;
 }
 
 #slide5 {
     
     background: black;
+    background-size:cover;
 }
 
 
@@ -445,33 +473,7 @@ li {
      }
 
 /********************************************Parallax Content******************************************************/
-.navigation{
-    padding:0;
-    margin:0;
-    background: #333;
-    position:fixed;
-    top:0;
-    z-index:1000;
-    width:100%;
-    
-    li{
-    display:inline-block;
-    padding: 0px 10px;
 
-        a{
-        color: #e1e1e1;
-        text-decoration:none;
-
-            &:hover{
-            color: lighten(#e1e1e1, 20%);
-            }
-        }
-
-    }
-    .active{
-    background-color: lighten(#333, 20%);
-    }
-}
 
 .button{
     display:block;
@@ -481,7 +483,7 @@ li {
     bottom:25px;
     left:50%;
     margin-left:-25px;
-    background: url("image/button.png") no-repeat;
+    background: url("image/blackarrow.png") no-repeat;
     background-size:50px 50px;
     z-index:1100;
 }
