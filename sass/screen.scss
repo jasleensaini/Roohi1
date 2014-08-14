@@ -48,6 +48,10 @@ $orange: #df4a1f;
     width:100%;
     height:100%;
 }
+.main{
+    margin-top:30px;
+    margin-left:-50px;
+}
 
 
 
@@ -55,14 +59,16 @@ $orange: #df4a1f;
 
 .slide {
     border-bottom:1px dashed $white;
-  
-}
-
-.slide1 {
-    @extend .slide;
+    background-attachment:fixed;
+    position:relative;
     height: 100%;
     width:100%;
    
+  
+}
+
+#slide1 {
+    
      background: url("image/particle1.jpg");
   
     .image6 {
@@ -74,57 +80,75 @@ $orange: #df4a1f;
 }
 
 
-.slide2 {
-    @extend .slide;
-    height: 100%;
-    width:100%;
+#slide2 {
     background: url("image/paint1.jpg") repeat;
     background-size:210%;
+    @include breakpoint(small) {background-size:100% 100%; background-repeat: repeat;}
+    @include breakpoint(medium) {background-size:100% 100%; background-repeat: repeat;}
     
 
      .wording {
     font-family:'Calligraffitti';
     color:$white;
-    font-size:2rem;
+    font-size:1.8rem;
+    font-weight:600;
     text-align:center;
     padding-top:0rem;
+    z-index:1000;
+     @include breakpoint(small) {font-size:1.5rem; font-weight:200; padding-top:-2rem;}
+    @include breakpoint(medium) {font-size:1.5rem; font-weight:400; padding-top:-2rem;}
+    
     }
 
     .triangle-up { 
     margin-left:6rem;
     border-bottom: 150px solid black;
-     border-left: 550px solid transparent; 
-     border-right: 550px solid transparent; 
-     height: 0;
-      width: 100px;
-      opacity:0.5;
-     }
-     .triangle-down { 
-     width: 0;
-      height: 0; 
-      border-left: 550px solid transparent;
-       border-right: 550px solid transparent; 
-       border-top: 150px solid black; 
-       margin-left:6rem;
-        opacity:0.5;
-       } 
+    border-left: 550px solid transparent; 
+    border-right: 550px solid transparent; 
+    height: 0;
+    width: 100px;
+    opacity:0.5;
+    z-index:-1000;
+    @include breakpoint(small) { border-left: 200px solid transparent; border-right: 200px solid transparent; }
+    @include breakpoint(medium) {border-left: 250px solid transparent; border-right: 250px solid transparent; }
+    }
+     
+    .triangle-down { 
+    width: 0;
+    height: 0; 
+    border-left: 550px solid transparent;
+    border-right: 550px solid transparent; 
+    border-top: 150px solid black; 
+    margin-left:6rem;
+    opacity:0.5;
+    z-index:-1000;
+    @include breakpoint(small) { border-left: 200px solid transparent; border-right: 200px solid transparent; }
+    @include breakpoint(medium) {border-left: 250px solid transparent; border-right: 250px solid transparent; }
+    } 
+
     .rectangle { 
     width: 1100px; 
     height: 373px;
     background: black; 
-     margin-left:6rem;
-     opacity:0.5;
-     } 
+    margin-left:6rem;
+    opacity:0.5;
+    @include breakpoint(small) { width: 500px; height: 300px;}
+    @include breakpoint(medium) { width: 500px; height: 300px;}
+    } 
 }
 
 
 
-.slide3 {
-    @extend .slide;
-    height: 100%;
-    width:100%;
+#slide3 {
     background: url("image/particle.jpg") no-repeat;
     background-size: 100% 100%;
+
+     .rectangle1 { 
+    width: 100%; 
+    height: 100%;
+    background: black;
+     opacity:0.7;
+     } 
 
      .circle-item {
     width: 250px;
@@ -301,38 +325,20 @@ $orange: #df4a1f;
   
 
 
-.slide4 {
-    @extend .slide;
-    height: 100%;
-    width:100%;
-    background-color:black;
+#slide4 {
+
+     background: url("image/particle.jpg") no-repeat;
 
     
 }
 
-.slide5 {
-    @extend .slide;
-    height: 100%;
-    width:100%;
+#slide5 {
+    
     background: black;
-
-    .o {
-    float: left;
-    overflow: hidden;
-    position: relative;
-    padding: 5%;
-}
-.o:before {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    transform: rotate(45deg);
-    background: linear-gradient(dodgerblue, black);
-    content: '';
-}
 }
 
 
-/******************************************slider slide contents************************************/
+/******************************************slider.html contents************************************/
 
 
 section {
@@ -437,3 +443,45 @@ li {
      border-right: 50px solid transparent; 
      border-top: 25px solid red; 
      }
+
+/********************************************Parallax Content******************************************************/
+.navigation{
+    padding:0;
+    margin:0;
+    background: #333;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    width:100%;
+    
+    li{
+    display:inline-block;
+    padding: 0px 10px;
+
+        a{
+        color: #e1e1e1;
+        text-decoration:none;
+
+            &:hover{
+            color: lighten(#e1e1e1, 20%);
+            }
+        }
+
+    }
+    .active{
+    background-color: lighten(#333, 20%);
+    }
+}
+
+.button{
+    display:block;
+    width:50px;
+    height:50px;
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    margin-left:-25px;
+    background: url("image/button.png") no-repeat;
+    background-size:50px 50px;
+    z-index:1100;
+}
