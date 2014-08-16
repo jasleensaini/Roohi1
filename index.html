@@ -32,6 +32,8 @@
     <script type="text/javascript" src="js/waypoints.js"></script>
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/dots.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/mobileView.css">
@@ -42,44 +44,68 @@
 <body>
     <div class="container">
     <nav>
-        <ul class="navigation">
-            <li data-slide="1" ><a href="#">Slide1</a></li>
-            <li data-slide="2" ><a href="#">Slide2</a></li>
-            <li data-slide="3" ><a href="#">Slide3</a></li>
-            <li data-slide="4" ><a href="#">Slide4</a></li>
-            <li data-slide="5" ><a href="#">Slide5</a></li>
-        </ul>
+        <div class="wrap clearfix">
+            <div class="dotstyle dotstyle-scaleup">
+                <ul class="navigation">
+                    <li data-slide="1" ><a href="#" ></a></li>
+                    <li data-slide="2" ><a href="#" ></a></li>
+                    <li data-slide="3" ><a href="#" ></a></li>
+                    <li data-slide="4" ><a href="#" ></a></li>
+                    <li data-slide="5" ><a href="#" ></a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
     
         <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="1">
             <div class="image6"></div>  
-            <a class="button" data-slide="2" title=""></a>
+            
 	    </div>
 
 	
         <div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
             <div class="triangle-up"></div>
             <div class="rectangle">
-                <p class="wording">Na man behooda girde kocha<br>
-                Wa bazaar megardam<br>
-                dildar megardam<br>
+                <p class="wording">
+                    <span class="replies ">Na man behooda girde kocha<br>
+                                                    Wa bazaar megardam<br>
+                                                        dildar megardam<br>
 
-                Khudaya rahm kon bar man<br>
-                Pareeshan waar megardam<br>
+                                                Khudaya rahm kon bar man<br>
+                                                Pareeshan waar megardam<br>
 
-                Khata karam gonahgaram<br>
-                Ba hale zaar megardam<br>
+                                                 Khata karam gonahgaram<br>
+                                                Ba hale zaar megardam<br>
 
-                Sharabe showq menosham<br>
-                Ba girde yaar megardam<br>
-                Sukhan mastana megoyam<br>
-                Walay hooshyaar megardam<br><br>
+                                                    Sharabe showq menosham<br>
+                                                     Ba girde yaar megardam<br>
+                                                    Sukhan mastana megoyam<br>
+                                                 Walay hooshyaar megardam<br><br>
 
-                ~ Rumi
+                                                    ~ Rumi
+                    </span>
+                    <span class="comment ">No I am not roaming aimlessly<br>
+                                            around the streets and bazaar<br>
+                                            I am a lover searching for his beloved<br>
+
+                                                God have mercy on me<br>
+                                            I am walking around troubled<br>
+
+                                                    I have done wrong and sinned<br>
+                                                    and am walking around wounded<br><br>
+
+                                                    I have drunk the wine of desire<br>
+                                                    and am strolling around beloved<br>
+
+                                                    Though I may seem drunk<br>
+                                                    I am quite sober
+                    </span>
                 </p>
+
+        
             </div>
             <div class="triangle-down"></div>
-            <a class="button" data-slide="3" title=""></a>
+            
         </div>
 
         <div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
@@ -119,12 +145,12 @@
                     </li>
                 </ul>
             </div>
-            <a class="button" data-slide="4" title=""></a>
+            
         </div>
 
 
 	    <div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0.5">
-            <a class="button" id="slide" data-slide="5" title=""></a>
+            
         </div>
 	
 	    <div class="slide" id="slide5"data-slide="5" data-stellar-background-ratio="0.5">
